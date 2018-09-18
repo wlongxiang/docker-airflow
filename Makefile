@@ -15,8 +15,8 @@ run: build
 
 kill:
 	@echo "Killing docker-airflow containers"
-	docker kill $(docker ps -q --filter ancestor=${TAG}:${VERSION})
+	docker kill $$(docker ps -q --filter ancestor=${TAG}:${VERSION})
 
 tty:
 	@echo running interactive shell...
-	docker exec -i -t $(docker ps -q --filter ancestor=${TAG}:${VERSION}) /bin/bash
+	docker exec -i -t $$(docker ps -q --filter ancestor=${TAG}:${VERSION}) /bin/bash
