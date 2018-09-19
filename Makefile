@@ -21,7 +21,7 @@ tty:
 	@echo running interactive shell...
 	docker exec -i -t $$(docker ps -q --filter ancestor=${TAG}:${VERSION}) /bin/bash
 
-compose:
+up:
 	@echo running docker-compose with local executor
 	docker-compose -f docker-compose-LocalExecutor.yml up -d
 
