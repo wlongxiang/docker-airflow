@@ -38,7 +38,7 @@ sensor = S3KeySensor(
     poke_interval=120,
     dag=dag)
 
-pythonop = PythonOperator(start_date=datetime(2016, 11, 1), python_callable=check_it, task_id="my_python")
+pythonop = PythonOperator(start_date=datetime(2016, 11, 1), python_callable=check_it, task_id="my_python_check")
 pythonop_write = PythonOperator(start_date=datetime(2016, 11, 1), python_callable=write_it, op_args=["me"],
                                 task_id="my_python_write")
 
